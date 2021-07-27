@@ -42,7 +42,10 @@ __Notes__
 
 * Interface - There were two types of interface used for this game. One was used for both the King and Knight pieces and the other for the pawn piece. This is because the pawn piece requires more information to be passed on such as the board and boolean movement value. The king and knight pieces although can use the same parameters for their movement, have different methods of movement: ie. knights go in a L and kings go in any compass direction. An interface was primarily chosen because both the King and Knight pieces had a common goal of checking to see if they could move to a particular tile using the given parameters. 
 
+* The usage of multiple "||" OR statements for the King and Knight pieces. I originally left them as a multiple if-else statements but I felt that it would cost less and potentially do the same if I just used multiple OR statements instead. 
+
 * Avoid touching the update() - I’m glad that the rays and mouse click values were already given. This made it easier to avoid touching the update() function. It’s because the update() is called in every frame and unnecessary checks will make it cost more to run in the future, etc. I also felt that I could reduce the amount of checks needed because we technically start checking the chess pieces when we click and unclick a tile. 
+* 
 
 * Multiple ways to complete this project - I also realized there were multiple ways to complete this project, ranging from only using all three classes that were given to me (board, tile, piece), to using keyboard inputs instead of the mouse, etc. 
 
