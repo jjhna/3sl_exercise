@@ -1,5 +1,51 @@
 # Three Space Lab Candidate Take Home Exercise
 
+## Personal Documentation
+
+__Directory:__
+There are 7 important script files in total:
+1. Board - Assets/Scripts/Board.cs
+2. Tile - Assets/Scripts/Tile.cs
+3. Piece - Assets/Scripts/Piece.cs
+4. Pawn - Assets/Scripts/Pawn.cs
+5. Knight - Assets/Scripts/Knight.cs
+6. King - Assets/Scripts/King.cs
+7. Imovement - Assets/Scripts/Imovement.cs
+
+__What each file does:__
+1. Board - This is the board class, it keeps track of 'all' the tile locations on the board. It also contains the feature for the user to click and move chess piece around the board. Additional added functions include changing the players turn, moving chess pieces and ending the game.
+2. Tile - This is the tile class, it contains the coordinates of a tile piece on the board. This tile class contains the information if a chess piece is on this tile and the location of this tile so that another chess piece can move to the tile position.
+3. Piece - This is the piece class, it keeps track of the type/class of piece: King, Pawn, Knight, etc. By knowing what type the chess piece is we can call the MovmentCheck() function from that class. It also keeps track of what color the chess piece is.
+4. Pawn - The movement check for both the attack and movement of the pawn, also based off it's color: white goes up, black goes down.
+5. Knight - The movement check for the knight based off a L pattern, in 8 possible directions.
+6. King - The movement check for the king based off a compass, in 8 possible directions.
+7. Imovement - Holds the interface class/methods for the Pawn, Knight and King pieces.
+
+__Steps to solving the problem__
+1. Research what the question/problem is asking for? We know we have to create a chess game with specific rules.
+2. What other rules and research can we do? We know there are only 8 possible directions for the King chess piece to move or attack towards, like a compass.
+3. Write out the classes/methods/variables that we may possibly need.
+4. Attack each problem into different subproblems. We need to figure out if a chess piece is already on a tile. We can solve this by having a boolean value that keeps track of this particular info. 
+5. Reduce any repetitive code, write out the comments and write out this documentation.
+
+__Final Notes/Thoughts:__
+Personally thank you for giving me the opportunity to take this take home test, and a Unity project nonetheless. Especially with a company that’s doing similar work to my previous masters capstone project. Please note that this is the first time I’ve used classes and interfaces for a Unity project. In most of my Unity projects I usually wrote scripts that could be attached to a gameobject in the scene. 
+
+__Notes__
+* Private/public access modifiers/declaration - I absolutely wanted to avoid using any global public variables, unless they were already initialized such as the Tiles x and y coordinates. This is to practice encapsulation and to enforce the usage of setters and getters which also help readability in the future. Ex: Someone types in “_tile.isColor” compared to: “_tile.getIsColor()
+
+* Struct classes -  Some of the classes could have as well been a struct, however those classes contain a private method, although not necessary, it keeps up with abstraction and to make my code clean and readable, where the user and others don't need to know how it works. Also the class makes it easy in my Piece class to use King king == null to be checked since null checks won't with value types (aka structs). I've also never used a struct in Unity before. 
+
+* Inheritance - Since all the main classes are attached to a gameobject, they require the usage of MonoBehaviour which is already inheriting another class from Unity. Since C# doesn’t allow multiple inheritance it was best to avoid creating classes that needed to be inherited from the monobehaviour classes 
+
+* Method Chaining - There were a few method chaining methods in the game. I wanted to use as few as possible, even though it makes code look readable, it can make it harder to debug, make it harder for future users to determine what the code does and it’s not really necessary (for example it might make more sense if you were adding the code to the Update() function).
+
+* Inheritance - There were two types of inheritance used for this game. One was used for both the King and Knight pieces and the other for the pawn piece. This is because the pawn piece requires more information to be passed on such as the board and boolean movement value. The king and knight pieces although can use the same parameters for their movement, have different methods of movement: ie. knights go in a L and kings go in any compass direction.
+
+* Avoid touching the update() - I’m glad that the rays and mouse click values were already given. This made it easier to avoid touching the update() function. It’s because the update() is called in every frame and unnecessary checks will make it cost more to run in the future, etc. I also felt that I could reduce the amount of checks needed because we technically start checking the chess pieces when we click and unclick a tile. 
+
+* Multiple ways to complete this project - I also realized there were multiple ways to complete this project, ranging from only using all three classes that were given to me (board, tile, piece), to using keyboard inputs instead of the mouse, etc. 
+
 ## What's the point of this exercise?
 
 The purpose of this exercise is for you to demonstrate your __code design and implementation skills__ in the context of a toy Unity project.
