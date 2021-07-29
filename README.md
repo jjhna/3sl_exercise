@@ -1,5 +1,11 @@
 # Three Space Lab Candidate Take Home Exercise
 
+## How to play
+Silly me, I forgot to add in how to play the game since only I know how to play the game because I'm the one that built it. 
+
+__Direction:__
+When you start the game, the white piece gets to go first. You first need to left click on a white piece such as the pawn and hold down down the left click button. While hold the mouse button aim at the tile set that you want the pawn piece to move towards. For example, one tile in front of the pawn piece. After carefully aiming at the tile, let go of the left mouse button. If successful, then the pawn piece will move to the locatio, if not successful, it means either another chess piece is in the way (in the pawn case white or black), you aimed incorrectly at the tile or the tile you choose is an invalid move action/position. Afterwards it becomes the black piece turn and vice versa. The game will continue until one of the king piece is captured, this will end the game which won't allow any further interactions or movement.
+
 ## Personal Documentation
 
 __Directory:__
